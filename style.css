@@ -1,0 +1,44 @@
+/* Estilo do corpo da página */
+body {
+    font-family: 'Verdana', sans-serif;
+    background-color: #f3f3f3; /* Fundo neutro para destacar o cartão */
+    display: flex; /* ativa o Flexbox */
+    justify-content: center; /* centraliza horizontalmente */
+    align-items: center; /* centraliza verticalmente */
+    min-height: 100vh; /* ocupa a altura total da tela */
+    margin: 0; /* remove a margem padrão */
+}
+
+/* Estilo do cartão */
+.cartao-container {
+    background-color: #0D0D0D; /* Fundo preto */
+    width: 380px;
+    text-align: center;
+    padding: 30px;
+    margin: 20px; 
+    border: 2px solid #F5F5F5; /* Borda branca */
+    border-radius: 15px; /* Cantos arredondados */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Sombra */
+}
+
+/* Nome completo */
+.nome-completo {
+    color: #F5F5F5; /* Branco */
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+/* Cargo ou título */
+.cargo {
+    color:#00BFFF; /* Azul BB para destaque */
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Contatos */
+.contato {
+    color: #F5F5F5; /* Branco */
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
