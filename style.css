@@ -1,44 +1,214 @@
-/* Estilo do corpo da página */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;700&display=swap');
+
+:root {
+    /* Paleta infantil minimalista */
+    --fundo-pagina: #F5F1E8;       /* bege clarinho / off-white */
+    --fundo-preto: #FFCC33;        /* letras em branco */
+    --texto-claro: #F5F1E8;       /* texto preto */
+    --texto-suave: #F5F1E8;       /* estrelas / traços amarelo vivo */
+    --contorno-preto: #000000;     /* traços pretos */
+    
+    /* Tipografia */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Poppins', sans-serif;
+}
+
 body {
-    font-family: 'Verdana', sans-serif;
-    background-color: #f3f3f3; /* Fundo neutro para destacar o cartão */
-    display: flex; /* ativa o Flexbox */
-    justify-content: center; /* centraliza horizontalmente */
-    align-items: center; /* centraliza verticalmente */
-    min-height: 100vh; /* ocupa a altura total da tela */
-    margin: 0; /* remove a margem padrão */
+    margin: 0;
+    font-family: var(--font-body);
+    background-color: var(--fundo-pagina);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Estilo do cartão */
-.cartao-container {
-    background-color: #0D0D0D; /* Fundo preto */
-    width: 380px;
+.centered {
+    position: relative;
+    perspective: 1000px;
+}
+
+.flip-container {
+    width: 600px;
+    height: 350px;
+    max-width: 90vw;
+    cursor: pointer;
+}
+
+.flipper {
+    transition: transform 2.5s ease;
+    transform-style: preserve-3d;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.flipper.flip {
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    backface-visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px #FFCC33(0,0,0,0.2);
+}
+
+/* Frente */
+.front {
+    background-color: var(--fundo-preto);
+    color: var(--texto-claro);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     text-align: center;
-    padding: 30px;
-    margin: 20px; 
-    border: 2px solid #F5F5F5; /* Borda branca */
-    border-radius: 15px; /* Cantos arredondados */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Sombra */
+    border: 2px solid var(--contorno-preto); /* contorno estilo livro ilustrado */
 }
 
-/* Nome completo */
-.nome-completo {
-    color: #F5F5F5; /* Branco */
-    font-size: 2em;
-    margin-bottom: 10px;
+.front h1 {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: var(--texto-claro);
 }
 
-/* Cargo ou título */
-.cargo {
-    color:#00BFFF; /* Azul BB para destaque */
-    font-size: 1.2em;
-    margin-bottom: 20px;
+.front .role {
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--texto-claro);
+    font-weight: 400;
+    margin-bottom: 25px;
+    white-space: nowrap;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
 }
 
-/* Contatos */
-.contato {
-    color: #F5F5F5; /* Branco */
-    font-size: 0.9em;
-    margin: 5px 0;
+.front .role::after {
+    content: "";
+    display: block;
+    width: 200px;       
+    height: 2px;          /* traço mais visível, estilo ilustrado */
+    background-color: var(--texto-suave);
+    margin: 5px auto 0;
 }
+
+.front .contact-info {
+    font-family: var(--font-body);
+    font-size: 16px;
+    margin: 4px 0;
+    color: var(--texto-claro);
+}
+
+/* Verso */
+.back {
+    background-color: var(--fundo-preto);
+    color: var(--texto-claro);
+    transform: rotateY(180deg);
+    padding: 40px;
+    box-sizing: border-box;
+    text-align: center;
+    border: 2px solid var(--contorno-preto);
+}
+
+.back h1 {
+    font-family: var(--font-heading);
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--texto-claro);
+}
+
+.back .role {
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--texto-claro);
+    font-weight: 400;
+    margin-bottom: 25px;
+    white-space: nowrap;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.back .role::after {
+    content: "";
+    display: block;
+    width: 200px;       
+    height: 2px;
+    background-color: var(--texto-suave);
+    margin: 5px auto 0;
+}
+
+.back p {
+    font-family: var(--font-body);
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: var(--texto-claro);
+}
+
+.bold {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--texto-claro);
+    display: block;
+    margin: 20px 0;
+    font-style: normal;
+    font-size: 1.1rem;
+}
+
+.social-icons {
+    margin-top: 30px;
+}
+
+.icon-box {
+    color: var(--texto-claro);
+    font-size: 20px;
+    height: 45px;
+    width: 45px;
+    border: 2px solid var(--texto-claro);
+    border-radius: 4px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.icon-box:hover {
+    background-color: var(--texto-suave);
+    color: var(--fundo-preto);
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255,217,61,0.5);
+}
+
+/* Responsividade */
+@media (max-width: 650px) {
+    .flip-container {
+        height: 300px;
+        margin: 20px;
+    }
+    .front h1, .back h1 {
+        font-size: 24px;
+    }
+    .front .role, .back .role {
+        font-size: 14px;
+    }
+    .front .role::after {
+        width: 150px; 
+    }
+    .back .role::after {
+        width: 80px;  
+    }
+}
+
+
+
+
 

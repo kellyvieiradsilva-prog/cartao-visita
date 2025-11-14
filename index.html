@@ -1,75 +1,56 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cartão de Visita da Kelly</title>
-    <style>
-        /* Corpo da página */
-        body {
-            font-family: 'Verdana', sans-serif;
-            background-color: #2E2E2E; /* Fundo da página cinza escuro */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
-
-        /* Cartão */
-        .cartao-container {
-            background-color: #0D0D0D; /* Fundo preto elegante */
-            width: 380px;
-            text-align: center;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
-        }
-
-        /* Nome */
-        .nome-completo {
-            color: #E0E0E0; /* Cinza claro */
-            font-size: 2em;
-            margin-bottom: 5px;
-        }
-
-        /* Cargo */
-        .cargo {
-            color: #E0E0E0; /* Cinza claro */
-            font-size: 1.2em;
-            margin-bottom: 20px;
-        }
-
-        /* E-mail */
-        .email {
-            color: #FFFFFF; /* Branco */
-            font-size: 0.95em;
-            margin: 5px 0;
-            font-weight: bold;
-        }
-
-        /* Telefone e endereço */
-        .contato {
-            color: #B0B0B0; /* Cinza médio */
-            font-size: 0.9em;
-            margin: 3px 0;
-        }
-    </style>
+    <title>Cartão de Visita - Kelly Vieira</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="cartao-container">
-        <h1 class="nome-completo">Kelly Vieira</h1>
-        <p class="cargo">Desenvolvedora Front-End</p>
 
-        <!-- E-mail -->
-        <p class="email"> kellyvieiradsilva@gmail.com</p>
+<div class="flip-container centered" onclick="this.querySelector('.flipper').classList.toggle('flip')">
+    <div class="flipper">
 
-        <!-- Telefone e endereço -->
-        <p class="contato">11 97190-3022</p>
-        <p class="contato">Rua Amoré-Pixuma, 275 - Parque Santa Madalena, São Paulo - SP, 03982-110</p>
+        <!-- Frente -->
+        <div class="front">
+            <div class="info">
+                <h1>Kelly Vieira</h1>
+                <p class="role">Desenvolvedora Front-End</p>
+                <div class="bold"> Trabalhando com que eu gosto :) s2</Trabalhando></div>
+                <div class="social-icons">
+                    <a class="icon-box" href="https://api.whatsapp.com/send?phone=5511971903022" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a class="icon-box" href="https://www.linkedin.com/in/kelly-vieira-11525a215" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a class="icon-box" href="mailto:kellyvieiradsilva@gmail.com" target="_blank"><i class="fa-brands fa-google"></i></a>
+                    <a class="icon-box" href="https://github.com/kellyvieiradsilva-prog" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a class="icon-box" href="https://codepen.io/Kelly-Vieira-the-styleful" target="_blank"><i class="fa-brands fa-codepen"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Verso -->
+        <div class="back">
+            <h1>Kelly Vieira</h1>
+            <p class="role">Desenvolvedora Front-End</p>
+            <p class="contact-info">(11) 97190-3022</p>
+            <p class="contact-info">kellyvieiradsilva@gmail.com</p>
+        </div>
+
     </div>
+</div>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
 
 
 
